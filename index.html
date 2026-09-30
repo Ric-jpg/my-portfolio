@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ric Ellizon G. Dacquel - Certificates Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .glass-card {
+            background: rgba(137, 4, 4, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgb(192, 8, 8);
+        }
+    </style>
+</head>
+<body class="bg-red-950 text-red-50 min-h-screen transition-colors duration-300">
+
+    <!-- Header / Nav -->
+    <header class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex justify-between items-center">
+        <h1 class="text-xl font-bold tracking-tight text-red-200">Ric Ellizon G. Dacquel</h1>
+    </header>
+
+    <!-- Certificates Section -->
+    <section id="certificates" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl font-extrabold tracking-tight text-white">Certificates & Achievements</h2>
+            <p class="text-red-300 mt-2">Professional credentials, certifications, and seminar recognitions.</p>
+            
+            <!-- Category Filter Buttons -->
+            <div id="cert-filters" class="flex flex-wrap justify-center gap-2 mt-6">
+                <button onclick="filterCerts('all', event)" class="cert-btn px-4 py-2 rounded-xl text-sm font-medium bg-red-600 text-white transition-all shadow-md">All</button>
+                <button onclick="filterCerts('cisco', event)" class="cert-btn px-4 py-2 rounded-xl text-sm font-medium glass-card hover:border-red-500 transition-all text-red-200">Cisco Networking Academy</button>
+                <button onclick="filterCerts('microsoft', event)" class="cert-btn px-4 py-2 rounded-xl text-sm font-medium glass-card hover:border-red-500 transition-all text-red-200">Microsoft Learn</button>
+                <button onclick="filterCerts('seminars', event)" class="cert-btn px-4 py-2 rounded-xl text-sm font-medium glass-card hover:border-red-500 transition-all text-red-200">Seminars / Webinars</button>
+                <button onclick="filterCerts('tesda', event)" class="cert-btn px-4 py-2 rounded-xl text-sm font-medium glass-card hover:border-red-500 transition-all text-red-200">TESDA / CSS</button>
+            </div>
+        </div>
+        
+        <div id="cert-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- 1. Cisco Packet Tracer -->
+            <div class="cert-card glass-card p-6 rounded-3xl space-y-4 relative group hover:border-red-500 transition-all cursor-pointer shadow-sm hover:shadow-xl" data-category="cisco" onclick="openCertModal('images/certificates-tracer.jpg')">
+                <div class="flex justify-between items-center">
+                    <span class="text-xs font-semibold text-red-400 uppercase tracking-wider">Cisco</span>
+                    <span class="px-2.5 py-1 rounded-full bg-red-500/20 text-red-300 text-xs font-medium">Verified</span>
+                </div>
+                <h3 class="text-lg font-bold text-white">Getting Started with Cisco Packet Tracer</h3>
+                <p class="text-sm text-red-300">Issued September 07, 2026</p>
+            </div>
+
+            <!-- 2. Cisco Networking Basics -->
+            <div class="cert-card glass-card p-6 rounded-3xl space-y-4 relative group hover:border-red-500 transition-all cursor-pointer shadow-sm hover:shadow-xl" data-category="cisco" onclick="openCertModal('images/certificates-networking-basics.jpg')">
+                <div class="flex justify-between items-center">
+                    <span class="text-xs font-semibold text-red-400 uppercase tracking-wider">Cisco</span>
+                    <span class="px-2.5 py-1 rounded-full bg-red-500/20 text-red-300 text-xs font-medium">Verified</span>
+                </div>
+                <h3 class="text-lg font-bold text-white">Networking Basics</h3>
+                <p class="text-sm text-red-300">Issued August 31, 2026</p>
+            </div>
+
+            <!-- 3. Microsoft Cloud Computing -->
+            <div class="cert-card glass-card p-6 rounded-3xl space-y-4 relative group hover:border-red-500 transition-all cursor-pointer shadow-sm hover:shadow-xl" data-category="microsoft" onclick="openCertModal('images/certificates-computing.jpg')">
+                <div class="flex justify-between items-center">
+                    <span class="text-xs font-semibold text-red-400 uppercase tracking-wider">Microsoft Learn</span>
+                    <span class="px-2.5 py-1 rounded-full bg-red-500/20 text-red-300 text-xs font-medium">Verified</span>
+                </div>
+                <h3 class="text-lg font-bold text-white">Describe cloud computing</h3>
+                <p class="text-sm text-red-300">Issued September 07, 2026</p>
+            </div>
+
+            <!-- 4. Microsoft Entra ID -->
+            <div class="cert-card glass-card p-6 rounded-3xl space-y-4 relative group hover:border-red-500 transition-all cursor-pointer shadow-sm hover:shadow-xl" data-category="microsoft" onclick="openCertModal('images/certificates-entra-ID.jpg')">
+                <div class="flex justify-between items-center">
+                    <span class="text-xs font-semibold text-red-400 uppercase tracking-wider">Microsoft Learn</span>
+                    <span class="px-2.5 py-1 rounded-full bg-red-500/20 text-red-300 text-xs font-medium">Verified</span>
+                </div>
+                <h3 class="text-lg font-bold text-white">Describe the function and identity types of Microsoft Entra ID</h3>
+                <p class="text-sm text-red-300">Issued September 07, 2026</p>
+            </div>
+
+            <!-- 5. Microsoft Core Data Concepts -->
+            <div class="cert-card glass-card p-6 rounded-3xl space-y-4 relative group hover:border-red-500 transition-all cursor-pointer shadow-sm hover:shadow-xl" data-category="microsoft" onclick="openCertModal('images/certificates-data-concepts.jpg')">
+                <div class="flex justify-between items-center">
+                    <span class="text-xs font-semibold text-red-400 uppercase tracking-wider">Microsoft Learn</span>
+                    <span class="px-2.5 py-1 rounded-full bg-red-500/20 text-red-300 text-xs font-medium">Verified</span>
+                </div>
+                <h3 class="text-lg font-bold text-white">Explore core data concepts</h3>
+                <p class="text-sm text-red-300">Issued September 07, 2026</p>
+            </div>
+
+            <!-- 6. Microsoft Dataverse -->
+            <div class="cert-card glass-card p-6 rounded-3xl space-y-4 relative group hover:border-red-500 transition-all cursor-pointer shadow-sm hover:shadow-xl" data-category="microsoft" onclick="openCertModal('images/certificates-dataverse.jpg')">
+                <div class="flex justify-between items-center">
+                    <span class="text-xs font-semibold text-red-400 uppercase tracking-wider">Microsoft Learn</span>
+                    <span class="px-2.5 py-1 rounded-full bg-red-500/20 text-red-300 text-xs font-medium">Verified</span>
+                </div>
+                <h3 class="text-lg font-bold text-white">Describe Microsoft Dataverse</h3>
+                <p class="text-sm text-red-300">Issued September 07, 2026</p>
+            </div>
+
+            <!-- 7. Agentic AI Seminar -->
+            <div class="cert-card glass-card p-6 rounded-3xl space-y-4 relative group hover:border-red-500 transition-all cursor-pointer shadow-sm hover:shadow-xl" data-category="seminars" onclick="openCertModal('images/certificates-agentic-ai.jpg')">
+                <div class="flex justify-between items-center">
+                    <span class="text-xs font-semibold text-red-400 uppercase tracking-wider">Seminar / Webinar</span>
+                    <span class="px-2.5 py-1 rounded-full bg-red-500/20 text-red-300 text-xs font-medium">Verified</span>
+                </div>
+                <h3 class="text-lg font-bold text-white">Agentic AI</h3>
+                <p class="text-sm text-red-300">Issued August 27, 2026</p>
+            </div>
+
+            <!-- 8. Integrating IoT Seminar -->
+            <div class="cert-card glass-card p-6 rounded-3xl space-y-4 relative group hover:border-red-500 transition-all cursor-pointer shadow-sm hover:shadow-xl" data-category="seminars" onclick="openCertModal('images/certificates-integrating.jpg')">
+                <div class="flex justify-between items-center">
+                    <span class="text-xs font-semibold text-red-400 uppercase tracking-wider">Seminar / Webinar</span>
+                    <span class="px-2.5 py-1 rounded-full bg-red-500/20 text-red-300 text-xs font-medium">Verified</span>
+                </div>
+                <h3 class="text-lg font-bold text-white">Integrating IoT in Capstone Project</h3>
+                <p class="text-sm text-red-300">Issued August 27, 2026</p>
+            </div>
+
+            <!-- 9. Video Editing Seminar -->
+            <div class="cert-card glass-card p-6 rounded-3xl space-y-4 relative group hover:border-red-500 transition-all cursor-pointer shadow-sm hover:shadow-xl" data-category="seminars" onclick="openCertModal('images/certificates-video-editing.jpg')">
+                <div class="flex justify-between items-center">
+                    <span class="text-xs font-semibold text-red-400 uppercase tracking-wider">Seminar / Webinar</span>
+                    <span class="px-2.5 py-1 rounded-full bg-red-500/20 text-red-300 text-xs font-medium">Verified</span>
+                </div>
+                <h3 class="text-lg font-bold text-white">Video Editing Tips & Tricks</h3>
+                <p class="text-sm text-red-300">Issued August 27, 2026</p>
+            </div>
+
+            <!-- 10. Programming Fundamentals Seminar -->
+            <div class="cert-card glass-card p-6 rounded-3xl space-y-4 relative group hover:border-red-500 transition-all cursor-pointer shadow-sm hover:shadow-xl" data-category="seminars" onclick="openCertModal('images/certificates-programming-fundamentals.jpg')">
+                <div class="flex justify-between items-center">
+                    <span class="text-xs font-semibold text-red-400 uppercase tracking-wider">Seminar / Webinar</span>
+                    <span class="px-2.5 py-1 rounded-full bg-red-500/20 text-red-300 text-xs font-medium">Verified</span>
+                </div>
+                <h3 class="text-lg font-bold text-white">Programming Fundamentals</h3>
+                <p class="text-sm text-red-300">Issued August 27, 2026</p>
+            </div>
+
+            <!-- 11. Emerging Technologies Seminar -->
+            <div class="cert-card glass-card p-6 rounded-3xl space-y-4 relative group hover:border-red-500 transition-all cursor-pointer shadow-sm hover:shadow-xl" data-category="seminars" onclick="openCertModal('images/certificates-emerging-technologies.jpg')">
+                <div class="flex justify-between items-center">
+                    <span class="text-xs font-semibold text-red-400 uppercase tracking-wider">Seminar / Webinar</span>
+                    <span class="px-2.5 py-1 rounded-full bg-red-500/20 text-red-300 text-xs font-medium">Verified</span>
+                </div>
+                <h3 class="text-lg font-bold text-white">Tech it to the Next Level: Careers in Emerging Technologies</h3>
+                <p class="text-sm text-red-300">Issued July 9, 2026</p>
+            </div>
+
+            <!-- 12. i4Rizal Seminar -->
+            <div class="cert-card glass-card p-6 rounded-3xl space-y-4 relative group hover:border-red-500 transition-all cursor-pointer shadow-sm hover:shadow-xl" data-category="seminars" onclick="openCertModal('images/certificates-i4rizal.jpg')">
+                <div class="flex justify-between items-center">
+                    <span class="text-xs font-semibold text-red-400 uppercase tracking-wider">Seminar / Webinar</span>
+                    <span class="px-2.5 py-1 rounded-full bg-red-500/20 text-red-300 text-xs font-medium">Verified</span>
+                </div>
+                <h3 class="text-lg font-bold text-white">i4Rizal Episode 1: Pro Ads & Precision Reach: Mastering AI Design and Targeting</h3>
+                <p class="text-sm text-red-300">Issued July 08, 2026</p>
+            </div>
+
+            <!-- 13. TESDA / CSS -->
+            <div class="cert-card glass-card p-6 rounded-3xl space-y-4 relative group hover:border-red-500 transition-all cursor-pointer shadow-sm hover:shadow-xl" data-category="tesda" onclick="openCertModal('images/certificates-tesda.jpg')">
+                <div class="flex justify-between items-center">
+                    <span class="text-xs font-semibold text-red-400 uppercase tracking-wider">TESDA</span>
+                    <span class="px-2.5 py-1 rounded-full bg-red-500/20 text-red-300 text-xs font-medium">Verified</span>
+                </div>
+                <h3 class="text-lg font-bold text-white">Electronic Products Assembly and Servicing NC II</h3>
+                <p class="text-sm text-red-300">Issued July 13, 2023</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificate Modal Preview -->
+    <div id="cert-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/85 backdrop-blur-sm hidden">
+        <div class="relative max-w-4xl w-full mx-4 p-2">
+            <button onclick="closeCertModal()" class="absolute -top-12 right-0 text-white text-4xl font-bold hover:text-red-400">&times;</button>
+            <img id="modal-img" src="" alt="Certificate Preview" class="max-h-[85vh] w-auto mx-auto rounded-2xl shadow-2xl border border-red-900 object-contain">
+        </div>
+    </div>
+
+    <!-- JavaScript Handlers -->
+    <script>
+        function filterCerts(category, event) {
+            const cards = document.querySelectorAll('.cert-card');
+            const buttons = document.querySelectorAll('.cert-btn');
+
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-red-600', 'text-white', 'shadow-md');
+                btn.classList.add('glass-card');
+            });
+
+            event.currentTarget.classList.remove('glass-card');
+            event.currentTarget.classList.add('bg-red-600', 'text-white', 'shadow-md');
+
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        function openCertModal(imageSrc) {
+            const modal = document.getElementById('cert-modal');
+            const modalImg = document.getElementById('modal-img');
+            modalImg.src = imageSrc;
+            modal.classList.remove('hidden');
+        }
+
+        function closeCertModal() {
+            const modal = document.getElementById('cert-modal');
+            modal.classList.add('hidden');
+        }
+
+        document.getElementById('cert-modal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeCertModal();
+            }
+        });
+    </script>
+</body>
+</html>
